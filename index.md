@@ -1,28 +1,18 @@
 ---
-layout: default
+layout: page
+title: 业精于勤，荒于嬉 - Kevin的个人博客
+---
 ---
 
-<body>
-  <div class="index-wrapper">
-    <div class="aside">
-      <div class="info-card">
-        <h1>BeiYuu</h1>
-        <a href="http://weibo.com/beiyuu/" target="_blank"><img src="http://www.weibo.com/favicon.ico" alt="" width="25"/></a>
-        <a href="http://www.douban.com/people/beiyuu/" target="_blank"><img src="http://www.douban.com/favicon.ico" alt="" width="22"/></a>
-        <a href="http://instagram.com/beiyuu/" target="_blank"><img src="http://d36xtkk24g8jdx.cloudfront.net/bluebar/00c6602/images/ico/favicon.ico" alt="" width="22"/></a>
-      </div>
-      <div id="particles-js"></div>
-    </div>
+![](images/1986-10-10-about-me/head.jpg)
 
-    <div class="index-content">
-      <ul class="artical-list">
-        {% for post in site.categories.blog %}
-        <li>
-          <a href="{{ post.url }}" class="title">{{ post.title }}</a>
-          <div class="title-desc">{{ post.description }}</div>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-</body>
+我是Kevin, 2012年3月毕业于杭州电子科技大学，硕士毕业课题和神经网络相关，基于各种算法构建电路模型。和现在的机器学习同一个概念。
+
+2010.08至2011.1，在摩托罗拉杭州杭州研发中心实习，从事4G设备的维护。<br>
+2012.03至今，    进入华为技术有限公司杭州研究所，从事底层软件开发和基层PL管理工作。
+
+联系方式：  
+Email: <iverson_10@163.com>  
+
+---
+{% include disqus.html %}
