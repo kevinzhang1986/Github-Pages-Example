@@ -154,17 +154,82 @@ Python中文档格式的事实标准是reStructuredText，简称reST。
 
 ## 第7章　方法和装饰器 
 ### 7．1 创建装饰器 
+functools模块通过update_wrapper函数，复制这些属性给这个包装器本身。
+要找特定的函数参数不够智能，使用inspect模块
+
+```
+ def desc.(f):
+     def wraps(*args, **keargs):
+        func_args = inspect.getcallargs(f, *arg, **kwargs)
+        if func_args.get('user_name') != 'admin':
+            raise ...
+        f(*args, **kwargs)
+        ...
+    return wraps
+```
+
+- insect.getcallargs
+
 ### 7．2 Python中方法的运行机制 
+
+- Python3中已经完全删除了未绑定方法这个概念。
+
 ### 7．3 静态方法
+静态方法属于类的方法，但实际上并非运行在类的实例上。
+
+- 不必为每个实例一个绑定方法，绑定方法是对象，创建是有开销的
+> P.static_method is P().static_method is P(x).static_method
+- 提高代码的可读性
+- 可以在子类中覆盖静态方法，如果把其作为全局函数，则其只存在一份，而无法在同一个函数中根据对象类型而调用不同的方法。
+
 ### 7．4 类方法
+类方法是直接绑定到类而非它的实例的方法。
+
 ### 7．5 抽象方法 
+抽象方法是定义在基类中可能有或者没有任何实现的方法。
+
 ### 7．6 混合使用静态方法、类方法和抽象方法 1
 ### 7．7 关于super的真相 
 
 ## 第8章　函数式编程
+在以函数式风格写代码时，函数应该设计成没有其他副作用。函数接受参数生成输出而不保留任何状态或修改任何不反映在返回值中的内容。<br>
+
+函数式编程特点:
+
+- 可形式化证明
+- 模块化
+- 简洁
+- 并发
+- 可测性
+
 ### 8．1 生成器 
+生成器就是对象，每次调用它的next方法时返回一个值，直到它抛出StopIteration。在pep 255中引入。
+
+解释器会保存对栈的引用，用来下一次调用next函数时恢复函数的执行。
+
+包含yield语句的Python函数。Python会将其标识为生成器。可以使用inspect对其进行检查。
+
+可以用send（）函数来向生成器发送一个值。类似lua。
+
 ### 8．2 列表解析
+可以在单行内构造列表内容。可以使用多个for以及if判断进行过滤，原则上是不限制个数的。 
+Python2.7之后可以在单行构造字典和集合。
+
 ### 8．3 函数式，函数的，函数化 
+- map(function, iterable)，Python2中返回列表,Python3中返回可迭代的map对象
+- filter(funciton or None, iterable)，返回同上
+- 可以使用生成器和列表解析实现与filter或map等价的函数
+- enumerate(iterable[,start])返回一个可迭代的enumerate对象
+- sorted
+- any / all
+- zip, python3返回可迭代对象
+- first
+> next(filter(lambda x:x>0, [-1, 0, 1, ...]))
+- functools.partial
+- operator
+> first([-1,0,1], key=partial(operator.le, 0))
+- itertools.chain / combinations / compress / cpunt / cycle / dropwhile / groupby / permutations / product / takewhile
+
 ## 第9章　抽象语法树
 ### 9．1 Hy
 ### 9．2 Paul Tagliamonte访谈
