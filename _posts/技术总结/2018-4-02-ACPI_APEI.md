@@ -1,9 +1,9 @@
 ---
 layout:     post
-title:      ACPI——APEI解读
+title:      RAS——APEI解读
 category: 技术总结
-description: ACPI——APEI解读
-tags: ACPI
+description: RAS——APEI解读
+tags: RAS
 ---
 
 # APEI
