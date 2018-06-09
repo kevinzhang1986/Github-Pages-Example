@@ -134,3 +134,6 @@ CoreReleaseLock (
   CoreRestoreTpl (Tpl);
 }
 ```
+
+**参考资料**
+[UEFI中DXE Core的事件管理](http://www.cnblogs.com/nju347/p/8010680.html)
