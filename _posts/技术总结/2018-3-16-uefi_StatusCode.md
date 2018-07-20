@@ -50,3 +50,5 @@ v表示value，表示具体的错误原因，32位数据为（class(31-24 bit)�
 I 数值0表示实例；
 
 XX：表示GUID。
+
+具体的code在PiStatusCode.h里定义。
