@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      RAS——APEI解读
+title:      基础篇(RAS)—APEI解读
 category: 技术总结
-description: RAS——APEI解读
+description: 基础篇(RAS)—APEI解读
 tags: RAS
 ---
 
